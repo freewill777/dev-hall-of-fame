@@ -1,0 +1,75 @@
+solana-token-creator-hall-of-fame/
+├── src/
+│   ├── config/                     // Configuration files
+│   │   ├── database.ts
+│   │   ├── solana.ts
+│   │   └── app.ts
+│   │
+│   ├── api/                        // API endpoints
+│   │   ├── routes/
+│   │   │   ├── index.ts
+│   │   │   ├── creators.ts
+│   │   │   ├── tokens.ts
+│   │   │   └── stats.ts
+│   │   ├── middleware/
+│   │   │   ├── error.ts
+│   │   │   ├── validation.ts
+│   │   │   └── rateLimiter.ts
+│   │   └── controllers/
+│   │       ├── creatorController.ts
+│   │       ├── tokenController.ts
+│   │       └── statsController.ts
+│   │
+│   ├── services/                   // Business logic
+│   │   ├── dataFetching/
+│   │   │   ├── solanaRPC.ts
+│   │   │   ├── tokenFetcher.ts
+│   │   │   └── liquidityPoolFetcher.ts
+│   │   ├── dataProcessing/
+│   │   │   ├── tokenProcessor.ts
+│   │   │   ├── creatorProcessor.ts
+│   │   │   └── rankingProcessor.ts
+│   │   └── scheduler/
+│   │       ├── updateScheduler.ts
+│   │       └── jobs.ts
+│   │
+│   ├── database/                   // Database access layer
+│   │   ├── models/
+│   │   │   ├── TokenCreator.ts
+│   │   │   ├── Token.ts
+│   │   │   ├── LiquidityPool.ts
+│   │   │   └── HistoricalData.ts
+│   │   ├── repositories/
+│   │   │   ├── creatorRepository.ts
+│   │   │   ├── tokenRepository.ts
+│   │   │   ├── liquidityPoolRepository.ts
+│   │   │   └── historicalDataRepository.ts
+│   │   └── migrations/
+│   │       ├── 001_initial_schema.sql
+│   │       └── ...
+│   │
+│   ├── utils/                      // Utility functions
+│   │   ├── logger.ts
+│   │   ├── metrics.ts
+│   │   └── helpers.ts
+│   │
+│   ├── types/                      // TypeScript types/interfaces
+│   │   ├── index.ts
+│   │   ├── solana.ts
+│   │   └── api.ts
+│   │
+│   └── app.ts                      // Application entry point
+│
+├── tests/                          // Test files
+│   ├── unit/
+│   ├── integration/
+│   └── e2e/
+│
+├── public/                         // Static files (if needed)
+│
+├── .env.example                    // Environment variables example
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── README.md
+└── docker-compose.yml              // For containerization

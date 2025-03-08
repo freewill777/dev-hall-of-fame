@@ -1,0 +1,23 @@
+flowchart TD
+    subgraph External
+        SOL[Solana Blockchain] --> |RPC Calls| RPC[RPC Provider\n- QuickNode/Alchemy]
+    end
+    
+    subgraph Backend
+        direction TB
+        RPC --> |Data Fetching| FETCH[Data Fetching Service]
+        FETCH --> |Raw Data| PROCESSOR[Data Processing Service]
+        PROCESSOR --> |Processed Data| DB[(Database)]
+        DB <--> |CRUD Operations| API[REST API Service]
+        SCHEDULER[Scheduler Service] --> |Trigger Updates| FETCH
+    end
+    
+    subgraph Frontend
+        direction TB
+        API <--> |HTTP Requests| CLIENT[Web Client]
+        CLIENT --> UI[User Interface]
+    end
+    
+    style Backend fill:#f5f5f5,stroke:#333,stroke-width:1px
+    style Frontend fill:#e6f7ff,stroke:#333,stroke-width:1px
+    style External fill:#fff3e0,stroke:#333,stroke-width:1px
