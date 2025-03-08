@@ -1,0 +1,102 @@
+solana-token-creator-hall-of-fame/
+├── .env                              # Environment variables
+├── .gitignore                        # Git ignore file
+├── package.json                      # Project dependencies and scripts
+├── tsconfig.json                     # TypeScript configuration
+├── docker-compose.yml                # Docker configuration
+├── Dockerfile                        # Docker image definition
+│
+├── src/                              # Source code
+│   ├── app.ts                        # Application entry point
+│   │
+│   ├── config/                       # Configuration files
+│   │   ├── app.ts                    # App configuration
+│   │   ├── database.ts               # Database configuration
+│   │   └── solana.ts                 # Solana RPC configuration
+│   │
+│   ├── api/                          # API layer
+│   │   ├── routes/                   # Route definitions
+│   │   │   ├── index.ts              # Routes index
+│   │   │   ├── creators.ts           # Creator routes
+│   │   │   ├── tokens.ts             # Token routes
+│   │   │   └── stats.ts              # Stats routes
+│   │   │
+│   │   ├── middleware/               # Express middleware
+│   │   │   ├── error.ts              # Error handling middleware
+│   │   │   ├── validation.ts         # Request validation middleware
+│   │   │   └── rateLimiter.ts        # Rate limiting middleware
+│   │   │
+│   │   └── controllers/              # Route controllers
+│   │       ├── creatorController.ts  # Creator controller
+│   │       ├── tokenController.ts    # Token controller
+│   │       └── statsController.ts    # Stats controller
+│   │
+│   ├── services/                     # Business logic services
+│   │   ├── dataFetching/             # Data fetching services
+│   │   │   ├── solanaRPC.ts          # Solana RPC service
+│   │   │   ├── tokenFetcher.ts       # Token fetching service
+│   │   │   └── liquidityPoolFetcher.ts # Liquidity pool fetcher
+│   │   │
+│   │   ├── dataProcessing/           # Data processing services
+│   │   │   ├── tokenProcessor.ts     # Token processor
+│   │   │   ├── creatorProcessor.ts   # Creator processor
+│   │   │   └── rankingProcessor.ts   # Ranking processor
+│   │   │
+│   │   └── scheduler/                # Scheduler services
+│   │       ├── updateScheduler.ts    # Update scheduler
+│   │       └── jobs/                 # Scheduled jobs
+│   │           ├── fetchTokens.ts    # Token fetching job
+│   │           ├── fetchLiquidityPools.ts # Pool fetching job
+│   │           └── updateRankings.ts # Ranking update job
+│   │
+│   ├── database/                     # Database layer
+│   │   ├── connection.ts             # Database connection
+│   │   ├── models/                   # Database models
+│   │   │   ├── TokenCreator.ts       # Token creator model
+│   │   │   ├── Token.ts              # Token model
+│   │   │   ├── LiquidityPool.ts      # Liquidity pool model
+│   │   │   └── HistoricalData.ts     # Historical data model
+│   │   │
+│   │   ├── repositories/             # Database repositories
+│   │   │   ├── creatorRepository.ts  # Creator repository
+│   │   │   ├── tokenRepository.ts    # Token repository
+│   │   │   ├── liquidityPoolRepository.ts # Liquidity pool repository
+│   │   │   └── historicalDataRepository.ts # Historical data repository
+│   │   │
+│   │   └── migrations/               # Database migrations
+│   │       ├── 001_initial_schema.sql # Initial schema
+│   │       └── 002_add_indexes.sql   # Additional indexes
+│   │
+│   ├── utils/                        # Utility functions
+│   │   ├── logger.ts                 # Logging utility
+│   │   ├── metrics.ts                # Metrics utility
+│   │   └── helpers.ts                # Helper functions
+│   │
+│   ├── types/                        # TypeScript types
+│   │   ├── index.ts                  # Type definitions index
+│   │   ├── solana.ts                 # Solana-specific types
+│   │   └── api.ts                    # API-specific types
+│   │
+│   └── scripts/                      # Utility scripts
+│       ├── testConnection.ts         # Connection test
+│       ├── initDatabase.ts           # Database initialization
+│       ├── migrateDatabase.ts        # Database migration
+│       ├── fetchInitialData.ts       # Initial data fetch
+│       └── updateRankings.ts         # Manual ranking update
+│
+├── database/                         # Database setup files
+│   └── init.sql                      # Database initialization SQL
+│
+├── public/                           # Static frontend files
+│   ├── index.html                    # Main HTML page
+│   ├── js/                           # JavaScript files
+│   │   └── app.js                    # Frontend JavaScript
+│   └── css/                          # CSS files
+│       └── style.css                 # Styling
+│
+└── tests/                            # Test files
+    ├── unit/                         # Unit tests
+    │   ├── services/                 # Service tests
+    │   └── repositories/             # Repository tests
+    ├── integration/                  # Integration tests
+    └── e2e/                          # End-to-end tests
